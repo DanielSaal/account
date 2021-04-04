@@ -1,4 +1,4 @@
-package com.dsa.account;
+package com.dsa.conta;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
