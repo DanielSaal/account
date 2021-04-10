@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -44,8 +45,8 @@ public class ContaService {
     public Conta insert(Conta conta) {
 
         log.info("Inserindo nova conta: {}", conta);
-        conta.setDataCriacao(LocalDate.now());
-        conta.setDataAtualizacao(LocalDate.now());
+        conta.setDataCriacao(LocalDateTime.now());
+        conta.setDataAtualizacao(LocalDateTime.now());
         conta.setStatus(Boolean.TRUE);
 
         return contaRepository.save(conta);
@@ -66,7 +67,7 @@ public class ContaService {
 
         contaAtualizada.setDataCriacao(contaAntiga.getDataCriacao());
         contaAtualizada.setStatus(contaAntiga.getStatus());
-        contaAtualizada.setDataAtualizacao(LocalDate.now());
+        contaAtualizada.setDataAtualizacao(LocalDateTime.now());
     }
 
     public void delete(String id) {

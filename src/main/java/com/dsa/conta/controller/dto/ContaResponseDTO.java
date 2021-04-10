@@ -3,6 +3,7 @@ package com.dsa.conta.controller.dto;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,6 +16,6 @@ public class ContaResponseDTO {
     private String numero;
     private String agencia;
     private String cpf;
-    private LocalDate dataCriacao;
-    private LocalDate dataAtualizacao;
+    private LocalDateTime dataCriacao;
+    private LocalDateTime dataAtualizacao;
 }
