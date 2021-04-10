@@ -15,7 +15,6 @@ public class ContaResponseDTO {
     private String numero;
     private String agencia;
     private String cpf;
-    private Boolean status;
     private LocalDate dataCriacao;
     private LocalDate dataAtualizacao;
 }

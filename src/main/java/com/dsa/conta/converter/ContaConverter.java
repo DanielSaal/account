@@ -5,8 +5,18 @@ import com.dsa.conta.controller.dto.ContaResponseDTO;
 import com.dsa.conta.document.Conta;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class ContaConverter {
+
+    public List<ContaResponseDTO> toResponseDTOList(List<Conta> contas) {
+
+        return contas.stream()
+                .map(this::toResponseDTO)
+                .collect(Collectors.toList());
+    }
 
     public ContaResponseDTO toResponseDTO(Conta conta) {
 
@@ -15,7 +25,6 @@ public class ContaConverter {
                 .numero(conta.getNumero())
                 .agencia(conta.getAgencia())
                 .cpf(conta.getCpf())
-                .status(conta.getStatus())
                 .dataCriacao(conta.getDataCriacao())
                 .dataAtualizacao(conta.getDataAtualizacao())
                 .build();
