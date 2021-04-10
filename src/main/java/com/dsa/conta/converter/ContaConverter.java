@@ -24,6 +24,7 @@ public class ContaConverter {
     public Conta toDocument(ContaRequestDTO contaRequestDTO) {
 
         return Conta.builder()
+                .id(contaRequestDTO.getId())
                 .agencia(contaRequestDTO.getAgencia())
                 .numero(contaRequestDTO.getNumero())
                 .cpf(contaRequestDTO.getCpf())

@@ -1,5 +1,6 @@
 package com.dsa.conta.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -12,7 +13,10 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ContaRequestDTO {
+
+    private String id;
 
     @Pattern(regexp = "^[0-9]*", message = "Somente dígitos são aceitos para o número da conta.")
     @NotNull(message = "Número da conta é obrigatório.")
